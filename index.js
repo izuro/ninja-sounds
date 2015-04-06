@@ -4,7 +4,7 @@ var Device = require('./lib/device')
   , configHandlers = require('./lib/config-handlers');
 
 // Give our driver a stream interface
-util.inherits(myDriver,stream);
+util.inherits(nsounds,stream);
 
 // Our greeting to the user.
 var HELLO_WORLD_ANNOUNCEMENT = {
@@ -28,7 +28,7 @@ var HELLO_WORLD_ANNOUNCEMENT = {
  * @fires register - Emit this when you wish to register a device (see Device)
  * @fires config - Emit this when you wish to send config data back to the Ninja Platform
  */
-function myDriver(opts,app) {
+function nsounds(opts,app) {
 
   var self = this;
 
@@ -59,7 +59,7 @@ function myDriver(opts,app) {
  * @param  {Object}   rpc.params Any input data the user provided
  * @param  {Function} cb      Used to match up requests.
  */
-myDriver.prototype.config = function(rpc,cb) {
+nsounds.prototype.config = function(rpc,cb) {
 
   var self = this;
   // If rpc is null, we should send the user a menu of what he/she
@@ -78,4 +78,4 @@ myDriver.prototype.config = function(rpc,cb) {
 
 
 // Export it
-module.exports = myDriver;
+module.exports = nsounds;
